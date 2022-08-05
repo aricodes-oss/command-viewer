@@ -1,0 +1,13 @@
+version: '3'
+services:
+  core:
+    build:
+      context: .
+      dockerfile: Dockerfile.local
+    volumes:
+      - ./:/code
+      - /mnt/data-drive/cluster-data/dbs:/dbs
+    ports:
+      - 3005:3000
+    environment:
+      - DB_LOCATION=/dbs
